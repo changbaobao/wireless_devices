@@ -1,0 +1,104 @@
+#app {
+    .main-container {
+        min-height: 100%;
+        transition: margin-left .28s;
+        position: relative;
+    }
+    .el-menu.el-menu--horizontal {
+        display: flex;
+        border-bottom: none;
+        a {
+            display: inline-block;
+            background: #fff;
+        }
+        .svg-icon {
+            margin-right: 16px;
+        }
+        .el-menu-item {
+            &.is-active {
+                // border-bottom-color: #1890ff;
+                // border-bottom:2px solid #1890ff;
+                background-color: #fff !important;
+            }
+        }
+        .el-submenu__icon-arrow {
+            right: 2px;
+        }
+        .el-menu-item,
+        .el-submenu__title {
+            height: 64px;
+            line-height: 64px;
+            background-color: #fff !important;
+        }
+        .el-menu-item .submenu-title-noDropdown {
+            background-color: #fff !important;
+        }
+    }
+    // .sidebar-container {
+    //     // menu hover
+    //     .submenu-title-noDropdown,
+    //     .el-submenu__title {
+    //         &:hover {
+    //             background-color: $menuHover !important;
+    //         }
+    //     }
+    //     .is-active>.el-submenu__title {
+    //         color: $subMenuActiveText !important;
+    //         background: $menuHover !important;
+    //     }
+    //     & .nest-menu .el-submenu>.el-submenu__title,
+    //     & .el-submenu .el-menu-item {
+    //         min-width: $sideBarWidth !important;
+    //         background-color: $subMenuBg !important;
+    //         &:hover {
+    //             background-color: $subMenuHover !important;
+    //         }
+    //     }
+    //     .el-menu-item {
+    //         background: #fff !important;
+    //         &.is-active {
+    //             color: #1890ff !important;
+    //             background: $menuHover !important;
+    //         }
+    //     }
+    // }
+}
+
+.withoutAnimation {
+    .main-container,
+    .sidebar-container {
+        transition: none;
+    }
+}
+
+// when menu collapsed
+.el-menu--vertical {
+    &>.el-menu {
+        .svg-icon {
+            margin-right: 16px;
+        }
+    }
+    .nest-menu .el-submenu>.el-submenu__title,
+    .el-menu-item {
+        background: #fff;
+        &:hover {
+            // you can use $subMenuHover
+            background-color: $menuHover !important;
+        }
+    }
+    // the scroll bar appears when the subMenu is too long
+    >.el-menu--popup {
+        max-height: 100vh;
+        overflow-y: auto;
+        &::-webkit-scrollbar-track-piece {
+            background: #d3dce6;
+        }
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #99a9bf;
+            border-radius: 20px;
+        }
+    }
+}
